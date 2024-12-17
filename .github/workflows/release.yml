@@ -3,6 +3,9 @@ name: Release
   push:
     branches:
       - release
+
+permissions: write-all
+
 jobs:
   changelog:
     runs-on: ubuntu-latest
