@@ -10,6 +10,7 @@
 
 ![GitHub License](https://img.shields.io/github/license/sergej-stk/Thoth-API)
 ![GitHub repo size](https://img.shields.io/github/repo-size/sergej-stk/Thoth-API)
+[![Changelog](https://img.shields.io/badge/Changelog-view-blue)](https://github.com/sergej-stk/Thoth-API/blob/release/CHANGELOG.md)
 </div>
 
 <br>
