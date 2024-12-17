@@ -14,8 +14,8 @@
 *.snupkg
 
 # Local configuration files
-**/appsettings.Development.json
-**/appsettings.Local.json
+# **/appsettings.Development.json
+# **/appsettings.Local.json
 
 # Logs and temporary files
 *.log
