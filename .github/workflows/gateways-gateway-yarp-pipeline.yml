@@ -1,4 +1,4 @@
-name: Gateway-Pipeline
+name: Gateways-Gateway-YARP-Pipeline
 on:
   push:
     paths:
@@ -14,8 +14,8 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Restore dependencies
-        run: dotnet restore src/Gateway/Gateway.csproj
+        run: dotnet restore src/Gateways/Gateway.YARP/Gateway.csproj
       - name: Build
-        run: dotnet build src/Gateway/Gateway.csproj --no-restore
+        run: dotnet build src/Gateways/Gateway.YARP/Gateway.csproj --no-restore
       - name: Test
-        run: dotnet test src/Gateway/Gateway.csproj --no-build --verbosity normal
+        run: dotnet test src/Gateways/Gateway.YARP/Gateway.csproj --no-build --verbosity normal
