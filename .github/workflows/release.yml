@@ -1,28 +1,25 @@
 name: Release
 'on':
   push:
-    tags:
-      - v*
-
+    branches:
+      - release
 jobs:
   changelog:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: conventional Changelog Action
+      - name: Generate changelog
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3.7.1
+        uses: TriPSs/conventional-changelog-action@v6
         with:
-          github-token: '${{ secrets.GITHUB_TOKEN }}'
-
-      - name: create release
+          github-token: '${{ secrets.github_token }}'
+          create-summary: true
+      - name: Create Release
         uses: actions/create-release@v1
-        id: create_release
-        if: '${{ steps.changelog.outputs.skipped == ''false'' }}'
+        if: steps.changelog.outputs.skipped != 'true'
         env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          GITHUB_TOKEN: '${{ secrets.github_token }}'
         with:
           tag_name: '${{ steps.changelog.outputs.tag }}'
           release_name: '${{ steps.changelog.outputs.tag }}'
