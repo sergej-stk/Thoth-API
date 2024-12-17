@@ -2,10 +2,10 @@ name: Services-Users-Pipeline
 on:
   push:
     paths:
-      - src/Services/Users/**
+      - src/Services/Users/User.API/**
   pull_request:
     paths:
-      - src/Services/Users/**
+      - src/Services/Users/User.API/**
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,8 +17,8 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Restore dependencies
-        run: dotnet restore src/Services/Users/UserAPI.csproj
+        run: dotnet restore src/Services/Users/User.API/UserAPI.csproj
       - name: Build
-        run: dotnet build src/Services/Users/UserAPI.csproj --no-restore
+        run: dotnet build src/Services/Users/User.API/UserAPI.csproj --no-restore
       - name: Test
-        run: dotnet test src/Services/Users/UserAPI.csproj --no-build --verbosity normal
+        run: dotnet test src/Services/Users/User.API/UserAPI.csproj --no-build --verbosity normal
