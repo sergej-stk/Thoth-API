@@ -1,0 +1,47 @@
+# Rider specific directories
+**/.idea/
+
+# Build directories
+**/bin/
+**/obj/
+**/out/
+**/temp/
+
+# Package manager
+**/packages/
+**/.nuget/
+*.nupkg
+*.snupkg
+
+# Local configuration files
+**/appsettings.Development.json
+**/appsettings.Local.json
+
+# Logs and temporary files
+*.log
+*.tlog
+*.tmp
+*.bak
+
+# Visual Studio specific directories
+**/.vs/
+**/*.dbmdl
+**/*.opendb
+
+# Rider workspace files
+**/*.rider/
+**/*.DotSettings.user
+
+# Test results and coverage files
+**/TestResults/
+**/coverage/
+*.coverage
+*.coveragexml
+*.cov
+
+# System files
+**/.DS_Store
+**/Thumbs.db
+**/*.userprefs
+**/*.orig
+**/*.rej
