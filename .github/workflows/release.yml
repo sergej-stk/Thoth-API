@@ -15,6 +15,8 @@ jobs:
         with:
           github-token: '${{ secrets.github_token }}'
           create-summary: true
+          skip-on-empty: false
+
       - name: Create Release
         uses: actions/create-release@v1
         if: steps.changelog.outputs.skipped != 'true'
