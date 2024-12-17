@@ -1,31 +1,26 @@
 <br>
 <br>
 
-<h3 align="center">
-  <b>Thoth-API</b>
-</h3>
+<div align="center">
+
+[![Logo](assets/logo.png)](https://www.instagram.com/nikki.rska/)
+</div>
+
 <div align="center">
 
 ![GitHub License](https://img.shields.io/github/license/sergej-stk/Thoth-API)
 ![GitHub repo size](https://img.shields.io/github/repo-size/sergej-stk/Thoth-API)
 </div>
 
-<h3 align="center">
-    <b>Continuous Integration (CI)</b>
-</h3> 
-<div align="center">
+<br>
+<br>
+
+### Continuous Integration (CI)
 
 |Project|Branch|Action|
-|:-----:|:----:|:----:|
+|:------|:----:|:-----|
 |[Gateway](https://github.com/sergej-stk/Thoth-API/tree/main/src/Gateway)|[main](https://github.com/sergej-stk/Thoth-API)|[![Gateway-Pipeline](https://github.com/sergej-stk/Thoth-API/actions/workflows/gateway-pipeline.yml/badge.svg)](https://github.com/sergej-stk/Thoth-API/actions/workflows/gateway-pipeline.yml)|
 |[Services/Users/User.API](https://github.com/sergej-stk/Thoth-API/tree/main/src/Services/Users/User.API)|[main](https://github.com/sergej-stk/Thoth-API)|[![Services-Users-Pipeline](https://github.com/sergej-stk/Thoth-API/actions/workflows/services-user-api-pipeline.yml/badge.svg)](https://github.com/sergej-stk/Thoth-API/actions/workflows/services-user-api-pipeline.yml)|
-</div>
 
-<h3 align="center">
-  <b>Author</b>
-</h3>
-
-<div align="center">
-
-  [sergej-stk](https://github.com/sergej-stk/)
-</div>
+### Author
+- [sergej-stk](https://github.com/sergej-stk/)
