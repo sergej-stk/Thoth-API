@@ -1,35 +1,34 @@
 name: Release
-
-on:
+'on':
   push:
     tags:
-      - 'v*'
-
+      - v*
 permissions: write-all
-
 jobs:
   changelog:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
-      - name: Generate Changelog
+      - name: Conventional Changelog Action
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3.7.1
+        uses: TriPSs/conventional-changelog-action@v5
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          git-message: 'chore(release): {version}'
           output-file: CHANGELOG.md
-          tag-prefix: 'v'
-          git-branch: 'main'
-
+          tag-prefix: v
+          skip-commit: 'false'
+          release-count: '10'
+          skip-version-file: 'false'
+          skip-on-empty: 'false'
+          git-branch: main
       - name: Create GitHub Release
         uses: actions/create-release@v1
         id: create_release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
         with:
-          tag_name: ${{ steps.changelog.outputs.tag }}
-          release_name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
+          tag_name: '${{ steps.changelog.outputs.tag }}'
+          release_name: '${{ steps.changelog.outputs.tag }}'
+          body: '${{ steps.changelog.outputs.clean_changelog }}'
