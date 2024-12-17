@@ -1,7 +1,28 @@
 version: 2
 updates:
-  - package-ecosystem: "nuget"
-    directory: "/"
+  - package-ecosystem: nuget
+    directory: /
     schedule:
-      interval: "weekly"
-    versioning-strategy: "increase"
+      interval: weekly
+    ignore:
+      - dependency-name: Microsoft.AspNetCore
+        versions:
+          - <3.0
+    commit-message:
+      prefix: chore
+      include: scope
+    pull-request-branch-name:
+      separator: '-'
+    rebase-strategy: auto
+    open-pull-requests-limit: 10
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: chore
+      include: scope
+    pull-request-branch-name:
+      separator: '-'
+    rebase-strategy: auto
+    open-pull-requests-limit: 10
