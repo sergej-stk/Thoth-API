@@ -3,32 +3,23 @@ name: Release
   push:
     tags:
       - v*
-permissions: write-all
 jobs:
   changelog:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-      - name: Conventional Changelog Action
-        id: changelog
-        uses: TriPSs/conventional-changelog-action@v5
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Generate Changelog
+        uses: TriPSs/conventional-changelog-action@v6
         with:
-          github-token: '${{ secrets.GITHUB_TOKEN }}'
-          git-message: 'chore(release): {version}'
+          release-type: node
           output-file: CHANGELOG.md
-          tag-prefix: v
-          skip-commit: 'false'
-          release-count: '10'
-          skip-version-file: 'false'
-          skip-on-empty: 'false'
-          git-branch: main
-      - name: Create GitHub Release
-        uses: actions/create-release@v1
-        id: create_release
+      - name: Commit Changelog
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add CHANGELOG.md
+          git commit -m "chore: update changelog"
+          git push origin HEAD:main
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-        with:
-          tag_name: '${{ steps.changelog.outputs.tag }}'
-          release_name: '${{ steps.changelog.outputs.tag }}'
-          body: '${{ steps.changelog.outputs.clean_changelog }}'
