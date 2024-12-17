@@ -18,7 +18,7 @@
 |Project|Branch|Action|
 |:-----:|:----:|:----:|
 |[Gateway](https://github.com/sergej-stk/Thoth-API/tree/main/src/Gateway)|[main](https://github.com/sergej-stk/Thoth-API)|[![Gateway-Pipeline](https://github.com/sergej-stk/Thoth-API/actions/workflows/gateway-pipeline.yml/badge.svg)](https://github.com/sergej-stk/Thoth-API/actions/workflows/gateway-pipeline.yml)|
-
+|[Services/Users/UserAPI](https://github.com/sergej-stk/Thoth-API/tree/main/src/Services/Users/UserAPI)|[main](https://github.com/sergej-stk/Thoth-API)|
 </div>
 
 <h3 align="center">
