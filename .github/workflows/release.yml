@@ -12,7 +12,6 @@ jobs:
       - name: Generate Changelog
         uses: TriPSs/conventional-changelog-action@v6
         with:
-          release-type: node
           output-file: CHANGELOG.md
       - name: Commit Changelog
         run: |
