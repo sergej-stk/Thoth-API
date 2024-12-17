@@ -3,9 +3,6 @@ on:
   push:
     paths:
       - src/Gateway/**
-  pull_request:
-    paths:
-      - src/Gateway/**
 jobs:
   build:
     runs-on: ubuntu-latest
