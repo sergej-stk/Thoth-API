@@ -1,0 +1,6 @@
+﻿services:
+  user.api:
+    image: user.api
+    build:
+      context: .
+      dockerfile: User.API/Dockerfile
