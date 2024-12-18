@@ -1,0 +1,6 @@
+﻿services:
+  gateway.yarp:
+    image: gateway.yarp
+    build:
+      context: .
+      dockerfile: Gateway.YARP/Dockerfile
