@@ -2,7 +2,7 @@ name: Gateways-Gateway-YARP-Pipeline
 on:
   push:
     paths:
-      - src/Gateway/**
+      - src/Gateways/Gateway.YARP/**
 jobs:
   build:
     runs-on: ubuntu-latest
