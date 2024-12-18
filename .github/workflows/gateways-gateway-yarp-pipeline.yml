@@ -14,8 +14,8 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Restore dependencies
-        run: dotnet restore src/Gateways/Gateway.YARP/Gateway.csproj
+        run: dotnet restore src/Gateways/Gateway.YARP/Gateway.YARP.csproj
       - name: Build
-        run: dotnet build src/Gateways/Gateway.YARP/Gateway.csproj --no-restore
+        run: dotnet build src/Gateways/Gateway.YARP/Gateway.YARP.csproj --no-restore
       - name: Test
-        run: dotnet test src/Gateways/Gateway.YARP/Gateway.csproj --no-build --verbosity normal
+        run: dotnet test src/Gateways/Gateway.YARP/Gateway.YARP.csproj --no-build --verbosity normal
