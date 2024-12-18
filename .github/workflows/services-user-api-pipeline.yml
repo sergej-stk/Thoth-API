@@ -14,8 +14,8 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Restore dependencies
-        run: dotnet restore src/Services/Users/User.API/User.API.csproj
+        run: dotnet restore src/Services/Users/User.API.csproj
       - name: Build
-        run: dotnet build src/Services/Users/User.API/User.API.csproj --no-restore
+        run: dotnet build src/Services/Users/User.API.csproj --no-restore
       - name: Test
-        run: dotnet test src/Services/Users/User.API/User.API.csproj --no-build --verbosity normal
+        run: dotnet test src/Services/Users/User.API.csproj --no-build --verbosity normal
